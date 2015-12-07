@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KioskDb">
+  <DataContextMoniker Name="/KioskDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f5389009-9794-45ee-9dd8-2feb2957f7b8" absoluteBounds="3.5, 4, 2, 1.193992513020834">
+      <DataClassMoniker Name="/KioskDbDataContext/AcademicianBuilding" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d22fd3a-352d-4eaa-8bba-65ade189a87f" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3847c8b6-46c1-4665-b37c-388c937b9a2c" absoluteBounds="6.75, 6.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KioskDbDataContext/AcademicianClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3fc0e4b3-a990-4613-88ed-62674a103775" absoluteBounds="6.765, 7.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7469d2cd-2222-469f-8f52-6768b93b74e2" absoluteBounds="0.75, 3.875, 2, 1.3862939453124992">
+      <DataClassMoniker Name="/KioskDbDataContext/Building" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c307a4d4-4faa-4459-b0bf-ca2632a57ed9" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b16e95a3-3a33-4050-8438-7ad07b8c3dce" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KioskDbDataContext/Class" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa1cd7a6-747e-4b2c-9b68-8a0ab64ffc71" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0190f139-c77d-4d8e-a587-19037a1d5877" absoluteBounds="3.5, 2, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/KioskDbDataContext/ClassBuilding" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a3241b0-2b16-47f4-aacb-7187a56f10c7" absoluteBounds="3.515, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b26244a3-eda4-485d-96a4-de0cced9dcce" absoluteBounds="0.75, 7, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/KioskDbDataContext/Engineering" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df177b22-30e9-4364-9b6e-4defba5a7b7d" absoluteBounds="0.765, 7.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75857bac-d64f-443d-bc8f-1d206412761e" absoluteBounds="3.5, 6, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/KioskDbDataContext/EngineeringBuilding" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1647571d-5a50-4f14-8698-b828a916f7a6" absoluteBounds="3.515, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="630972e4-864b-413a-9321-096d0b5dc725" absoluteBounds="6.5, 3.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/KioskDbDataContext/EngineeringClass" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ebabbfc-8479-4f2e-a733-d61add45c98d" absoluteBounds="6.515, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KioskDbDataContext/Building/Building_AcademicianBuilding" />
+      <nodes>
+        <classShapeMoniker Id="7469d2cd-2222-469f-8f52-6768b93b74e2" />
+        <classShapeMoniker Id="f5389009-9794-45ee-9dd8-2feb2957f7b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.875); (3.125 : 3.5); (3.125 : 3.56899251302083); (3.5 : 3.19399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KioskDbDataContext/Building/Building_ClassBuilding" />
+      <nodes>
+        <classShapeMoniker Id="7469d2cd-2222-469f-8f52-6768b93b74e2" />
+        <classShapeMoniker Id="0190f139-c77d-4d8e-a587-19037a1d5877" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.16429768880208); (3.5 : 2.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KioskDbDataContext/Class/Class_ClassBuilding" />
+      <nodes>
+        <classShapeMoniker Id="b16e95a3-3a33-4050-8438-7ad07b8c3dce" />
+        <classShapeMoniker Id="0190f139-c77d-4d8e-a587-19037a1d5877" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.2612939453125); (3.125 : 5.6362939453125); (3.125 : 5.62408254422075); (3.50091745577925 : 6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/KioskDbDataContext/Building/Building_EngineeringBuilding" />
+      <nodes>
+        <classShapeMoniker Id="7469d2cd-2222-469f-8f52-6768b93b74e2" />
+        <classShapeMoniker Id="75857bac-d64f-443d-bc8f-1d206412761e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 7); (1.75 : 6.4999995); (3.5 : 6.4999995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KioskDbDataContext/Engineering/Engineering_EngineeringBuilding" />
+      <nodes>
+        <classShapeMoniker Id="b26244a3-eda4-485d-96a4-de0cced9dcce" />
+        <classShapeMoniker Id="75857bac-d64f-443d-bc8f-1d206412761e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.34375); (7.5 : 1.34375); (7.5 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KioskDbDataContext/Class/Class_EngineeringClass" />
+      <nodes>
+        <classShapeMoniker Id="b16e95a3-3a33-4050-8438-7ad07b8c3dce" />
+        <classShapeMoniker Id="630972e4-864b-413a-9321-096d0b5dc725" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.72524201302083); (6.5 : 7.72524201302083); (6.5 : 6.375); (7.5 : 6.375); (7.5 : 5.06899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KioskDbDataContext/Engineering/Engineering_EngineeringClass" />
+      <nodes>
+        <classShapeMoniker Id="b26244a3-eda4-485d-96a4-de0cced9dcce" />
+        <classShapeMoniker Id="630972e4-864b-413a-9321-096d0b5dc725" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

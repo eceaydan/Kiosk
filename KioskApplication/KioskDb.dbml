@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IstanbulUniversityKiosk" Class="KioskDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=KADIR-VAIO\SQLEXPRESS;Initial Catalog=IstanbulUniversityKiosk;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="IstanbulUniversityKioskConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AcademicianBuilding" Member="AcademicianBuildings">
+    <Type Name="AcademicianBuilding">
+      <Column Name="AcademicianClassId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Building_AcademicianBuilding" Member="Building" ThisKey="BuildingId" OtherKey="BuildingId" Type="Building" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AcademicianClass" Member="AcademicianClasses">
+    <Type Name="AcademicianClass">
+      <Column Name="AcademicianName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EngineeringId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BuildingLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AcademicianClassId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Building" Member="Buildings">
+    <Type Name="Building">
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BuildingLevelCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Building_AcademicianBuilding" Member="AcademicianBuildings" ThisKey="BuildingId" OtherKey="BuildingId" Type="AcademicianBuilding" />
+      <Association Name="Building_ClassBuilding" Member="ClassBuildings" ThisKey="BuildingId" OtherKey="BuildingId" Type="ClassBuilding" />
+      <Association Name="Building_EngineeringBuilding" Member="EngineeringBuildings" ThisKey="BuildingId" OtherKey="BuildingId" Type="EngineeringBuilding" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Class" Member="Classes">
+    <Type Name="Class">
+      <Column Name="ClassId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassBuildingLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassLimit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Class_ClassBuilding" Member="ClassBuildings" ThisKey="ClassId" OtherKey="ClassId" Type="ClassBuilding" />
+      <Association Name="Class_EngineeringClass" Member="EngineeringClasses" ThisKey="ClassId" OtherKey="ClassId" Type="EngineeringClass" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClassBuilding" Member="ClassBuildings">
+    <Type Name="ClassBuilding">
+      <Column Name="ClassId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Building_ClassBuilding" Member="Building" ThisKey="BuildingId" OtherKey="BuildingId" Type="Building" IsForeignKey="true" />
+      <Association Name="Class_ClassBuilding" Member="Class" ThisKey="ClassId" OtherKey="ClassId" Type="Class" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Engineering" Member="Engineerings">
+    <Type Name="Engineering">
+      <Column Name="EngineeringId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EngineeringName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Engineering_EngineeringBuilding" Member="EngineeringBuildings" ThisKey="EngineeringId" OtherKey="EngineeringId" Type="EngineeringBuilding" />
+      <Association Name="Engineering_EngineeringClass" Member="EngineeringClasses" ThisKey="EngineeringId" OtherKey="EngineeringId" Type="EngineeringClass" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EngineeringBuilding" Member="EngineeringBuildings">
+    <Type Name="EngineeringBuilding">
+      <Column Name="EngineeringId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Building_EngineeringBuilding" Member="Building" ThisKey="BuildingId" OtherKey="BuildingId" Type="Building" IsForeignKey="true" />
+      <Association Name="Engineering_EngineeringBuilding" Member="Engineering" ThisKey="EngineeringId" OtherKey="EngineeringId" Type="Engineering" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EngineeringClass" Member="EngineeringClasses">
+    <Type Name="EngineeringClass">
+      <Column Name="EngineeringId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClassId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Class_EngineeringClass" Member="Class" ThisKey="ClassId" OtherKey="ClassId" Type="Class" IsForeignKey="true" />
+      <Association Name="Engineering_EngineeringClass" Member="Engineering" ThisKey="EngineeringId" OtherKey="EngineeringId" Type="Engineering" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Tittle</title>
+    <link href="~/Contents/Css/MasterPageCss.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1">
+        <div class="divLogo">
+            <img src="~/Contents/Images/Logos/IU_Logo.jpg" class="LogoImage" />
+        </div>
+        <div class="divLeftMenu">
+            <img src="~/Contents/Images/Icons/homeBtn.png" class="btnClassHome" />
+            <img src="~/Contents/Images/Icons/undoIcon.png" class="btnClassUndo" />
+            <img src="~/Contents/Images/Icons/redoIcon.png" class="btnClassRedo" />
+        </div>
+        <div class="divCenterContent">
+            @RenderBody();
+        </div>
+    </form>
+</body>
+</html>
