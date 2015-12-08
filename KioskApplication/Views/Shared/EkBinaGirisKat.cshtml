@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "EkBinaGirisKat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<header>
+    <link href="~/Contents/Css/HomePageCss.css" rel="stylesheet" />
+    <link href="~/Contents/Css/AnaBinaCss.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function buttonClick(id) {
+            var urlString = id;
+            urlString = urlString.substring(3, urlString.length);
+            alert(urlString);
+            window.location.href=(urlString);
+        }
+    </script>
+</header>
+<div>
+    <img src="~/Contents/Images/Maps/Ek%20Bina%20Giriş%20Kat.jpg" class="ImageCss" />
+    <div class="button-div">
+        <input id="btnEkBinaGirisKat" type="button" value="Giriş Kat" class="button" onclick="buttonClick(btnEkBinaGirisKat.id);"  />
+        <input id="btnEkBinaKatBir" type="button" value="Kat 1" class="button" onclick="buttonClick(btnEkBinaKatBir.id);" />
+        <input id="btnEkBinaKatIki" type="button" value="Kat 2" class="button" onclick="buttonClick(btnEkBinaKatIki.id);"/>
+    </div>
+
+
+</div>

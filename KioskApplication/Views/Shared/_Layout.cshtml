@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Tittle</title>
+    <link href="~/Contents/Css/MasterPageCss.css" rel="stylesheet" />
+    <script>
+        function btnClassHomeClick() {
+            window.location.href='/'
+        }
+    </script>
+</head>
+<body>
+    <form id="form1">
+        <div class="divLogo">
+            <img src="~/Contents/Images/Logos/IU_Logo.jpg" class="LogoImage" />
+        </div>
+        <div class="divLeftMenu">
+
+            <input id="btnSearch" type="button" value="Ara" />
+            <img src="~/Contents/Images/Icons/homeBtn.png" class="btnClassHome" onclick="btnClassHomeClick();" />
+            <img src="~/Contents/Images/Icons/undoIcon.png" class="btnClassUndo" />
+            <img src="~/Contents/Images/Icons/redoIcon.png" class="btnClassRedo" />
+        </div>
+        <div class="divCenterContent">
+            @RenderBody();
+        </div>
+    </form>
+</body>
+</html>

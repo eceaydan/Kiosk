@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "AnaBinaGirisKat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<header>
+    <link href="~/Contents/Css/HomePageCss.css" rel="stylesheet" />
+    <link href="~/Contents/Css/AnaBinaCss.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function buttonClick(id) {
+            var urlString = id;
+            urlString = urlString.substring(3, urlString.length);
+            alert(urlString);
+            window.location.href = (urlString);
+        }
+    </script>
+</header>
+<div>
+    <img src="~/Contents/Images/Maps/Giriş%20Kat.jpg" class="ImageCss" />
+    <div class="button-div">
+        <input id="btnAnaBinaZeminKat" type="button" value="Zemin Kat" class="button" onclick="buttonClick(btnAnaBinaZeminKat.id);"  />
+        <input id="btnAnaBinaGirisKat" type="button" value="Giris Kat" class="button" onclick="buttonClick(btnAnaBinaGirisKat.id);" />
+        <input id="btnAnaBinaKatBir" type="button" value="Kat 1" class="button" onclick="buttonClick(btnAnaBinaKatBir.id);" />
+        <input id="btnAnaBinaKatIki" type="button" value="Kat 2" class="button" onclick="buttonClick(btnAnaBinaKatIki.id);"/>
+        <input id="btnAnaBinaKatUc" type="button" value="Kat 3" class="button" onclick="buttonClick(btnAnaBinaKatUc.id);"/>
+        <input id="btnAnaBinaKatDort" type="button" value="Kat 4" class="button" onclick="buttonClick(btnAnaBinaKatDort.id);"/>
+    </div>
+
+
+</div>

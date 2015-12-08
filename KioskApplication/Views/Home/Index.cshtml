@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Ana Sayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<header>
+    <link href="~/Contents/Css/HomePageCss.css" rel="stylesheet" />
+    <script type="text/javascript">
+        //Fonksiyon mouse ile tıklanınca(kiosk da ekrana dokununca) tıklanan lokasyonun x ve y koordinatlarını bulup c# tarafındaki metoda yönlendiriyor.
+        function getPositions(ev) {
+            if (ev == null) { ev = window.event }
+            _mouseX = ev.clientX;
+            _mouseY = ev.clientY;
+            alert("x :" + _mouseX + "\ny :" + _mouseY);
+            if (_mouseX < 711 && _mouseX > 288 && _mouseY < 663 && _mouseY > 268) {
+                window.location.href="/Shared/AnaBinaGirisKat";
+            }
+            else if (_mouseX < 1741 && _mouseX>1181 && _mouseY < 684 && _mouseY>255) {
+                window.location.href="/Shared/EkBinaGirisKat";
+            }
+        }
+    </script>
+</header>
+<body>
+    <div>
+        <img src="~/Contents/Images/Maps/GiriSdeneme.png" onclick="getPositions();" class="ImageCss" />
+    </div>
+</body>

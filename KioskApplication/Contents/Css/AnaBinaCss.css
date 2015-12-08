@@ -1,0 +1,9 @@
+﻿.button-div {
+position:absolute;
+left:1080px;
+bottom:10px;
+}
+.button {
+height:50px;
+width:80px;
+}
